@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Marco Pérez">
+    <meta name="description" content="Generate secure passwords in one click">
+    <meta name="keywords" content="password, generator, password generator">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- SCRIPTS -->
+    <script defer src="app.js"></script>
+
+    <!-- OTHER -->
+    <title>Password Generator</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="title">Password Generator</h1>
+
+        <div class="card">
+
+            <form class="form" id="form">
+
+                <!-- Password field -->
+                <div class="input-field">
+                    <input type="text" class="password" id="password" placeholder="your password" name="password"
+                        disabled>
+                    <span class="copy-icon" id="copy-icon" title="Copy">
+                        <i class="bi bi-clipboard"></i>
+                        <span class="tooltip" id="tooltip">Copied!</span>
+                    </span>
+                </div>
+
+                <!-- Checkboxes -->
+                <div class="checkbox-group">
+                    <div class="check-field">
+                        <label class="check-label">Numbers
+                            <input type="checkbox" checked id="numbers" name="numbers">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="check-field">
+                        <label class="check-label">Symbols
+                            <input type="checkbox" id="symbols" name="symbols">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="check-field">
+                        <label class="check-label">Lowercase
+                            <input type="checkbox" checked id="lowercase" name="lowercase">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="check-field">
+                        <label class="check-label">Uppercase
+                            <input type="checkbox" checked id="uppercase" name="uppercase">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Range input -->
+                <div class="range-field">
+                    <label for="length" class="range-label">Length</label>
+                    <div class="slider-container">
+                        <input type="range" min="4" max="16" value="8" class="slider" id="slider" name="slider">
+                        <input type="text" value="8" class="slider-value" id="slider-value" disabled>
+                    </div>
+                </div>
+
+                <!-- Generate button -->
+                <input type="submit" value="Generate" class="btn">
+
+            </form>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

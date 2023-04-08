@@ -1,0 +1,363 @@
+/* 
+
+MEDIA QUERIES SIZES
+
+--- TABLET PORTRAIT ---
+@media (min-width: 37.5em) {} // 600px
+
+--- TABLET LANDSCAPE ---
+@media (min-width: 56.25em) {} // 900px
+
+--- DESKTOP ---
+@media (min-width: 75em) {} // 1200px
+
+*/
+
+:root {
+    --color-dark: #15151C;
+    --color-purple: #5951FF;
+    --color-white: #fff;
+    --color-grey: #555;
+    --color-grey-light: #777;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+/* Tablet portrait */
+@media (min-width: 37.5em) {
+    html {
+        font-size: 68.75%;
+        /* 1rem = 11px */
+    }
+}
+
+/* Tablet landscape */
+@media (min-width: 56.25em) {
+    html {
+        font-size: 75%;
+        /* 1rem = 12px */
+    }
+}
+
+/* Desktop */
+@media (min-width: 75em) {
+    html {
+        font-size: 81.25%;
+        /* 1rem = 13px */
+    }
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--color-dark);
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.title {
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+/* Tablet portrait */
+@media (min-width: 37.5em) {
+    .title {
+        font-size: 2.6rem;
+    }
+}
+
+/* Tablet landscape */
+@media (min-width: 56.25em) {
+    .title {
+        margin: 5rem 0;
+    }
+}
+
+/* Desktop */
+@media (min-width: 75em) {
+    .title {
+        margin: 6rem 0;
+    }
+}
+
+.card {
+    max-width: 35rem;
+    padding: 2.5rem 2rem;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    box-shadow: .8rem .8rem var(--color-purple);
+    border-radius: 5px;
+}
+
+/* Tablet portrait */
+@media (min-width: 37.5em) {
+    .card {
+        box-shadow: 1rem 1rem var(--color-purple);
+    }
+}
+
+.input-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.password {
+    display: inline-block;
+    width: 85%;
+    border: 3px solid var(--color-purple);
+    border-right: none;
+    padding: .5rem;
+    padding-left: .8rem;
+    border-radius: 5px 0 0 5px;
+    font-family: 'Ubuntu';
+    font-size: 2rem;
+    color: var(--color-grey);
+    outline: none;
+}
+
+.copy-icon {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    border: 3px solid var(--color-purple);
+    padding: .5rem;
+    border-radius: 0 5px 5px 0;
+    font-size: 2rem;
+    text-align: center;
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+/* Desktop */
+@media (min-width: 75em) {
+    .copy-icon {
+        cursor: pointer;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    background-color: var(--color-grey);
+    font-size: 1.2rem;
+    padding: .4rem .8rem;
+    border-radius: .8rem;
+    top: 160%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s;
+}
+
+.tooltip-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkbox-group {
+    margin: 3rem 0;
+}
+
+.check-field:not(:last-child) {
+    margin-bottom: 1.4rem;
+}
+
+.check-label {
+    position: relative;
+    padding-left: 2.8rem;
+    padding-top: 1px;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: var(--color-purple);
+    font-size: 1.6rem;
+}
+
+/* Desktop */
+@media (min-width: 75em) {
+    .check-label {
+        cursor: pointer;
+    }
+}
+
+/* Hide the browser's default checkbox */
+.check-label input[type="checkbox"] {
+    position: absolute;
+    /* Get it out of the flow */
+    opacity: 0;
+    /* Make it trasparent */
+    height: 0;
+    /* Make it invisible by shrinking it */
+    width: 0;
+}
+
+.check-label input[type="checkbox"]:checked+.checkmark {
+    background-color: var(--color-purple);
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-purple);
+    border-radius: 5px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check-label input[type="checkbox"]:checked+.checkmark:after {
+    display: block;
+}
+
+.check-label .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Tablet portrait */
+@media (min-width: 37.5em) {
+    .check-label .checkmark:after {
+        left: 7px;
+        top: 3px;
+    }
+}
+
+/* Tablet landscape */
+@media (min-width: 56.25em) {
+    .check-label .checkmark:after {
+        top: 4px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 75em) {
+    .check-label .checkmark:after {
+        left: 8px;
+        top: 4px;
+        width: 7px;
+        height: 12px;
+        border-width: 0 3px 3px 0;
+    }
+}
+
+.range-label {
+    display: block;
+    color: var(--color-purple);
+    font-size: 1.6rem;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.slider {
+    width: 60%;
+    margin-right: 2rem;
+    -o-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    height: .4rem;
+    background: var(--color-purple);
+    outline: none;
+    border-radius: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--color-purple);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--color-purple);
+    cursor: pointer;
+}
+
+.slider-value {
+    width: 20%;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-purple);
+    border-radius: 5px;
+    padding: .6rem;
+    text-align: center;
+    color: var(--color-grey-light);
+    font-family: "Ubuntu";
+    font-size: 1.6rem;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    display: block;
+    width: 100%;
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    padding: 1.2rem 0;
+    margin-top: 3rem;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Desktop */
+@media (min-width: 75em) {
+    .btn {
+        cursor: pointer;
+    }
+}
