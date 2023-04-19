@@ -1,6 +1,6 @@
 # Password Generator
 
-## About :memo:
+## :memo: About
 
 This is a simple webapp to create secure passwords in just a few steps: 
 
@@ -9,6 +9,6 @@ This is a simple webapp to create secure passwords in just a few steps:
 
 That's it! You can also copy the generated password to your clipboard by clicking the icon right next to it.
 
-## Live demo :computer:
+## :computer: Live demo
 
 Check out the live version [here](https://marcodamianperez.github.io/password-generator/)
