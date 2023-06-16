@@ -12,3 +12,5 @@ That's it! You can also copy the generated password to your clipboard by clickin
 ## :computer: Live demo
 
 Check out the live version [here](https://marcodamianperez.github.io/password-generator/)
+
+![mockup](https://i.imgur.com/XLuThsP.png)
